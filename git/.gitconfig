@@ -1,0 +1,53 @@
+[user]
+  name = Vladimir Yanovsky
+  email = vladimir@tvori.co
+[core]
+  autocrlf = true
+  preloadindex = true
+  fscache = true
+  editor = vim
+  ignorecase = false
+[alias]
+  bclean = "!f() { git remote prune origin && git for-each-ref --format '%(refname:short)' refs/heads | xargs git branch -D; }; f"
+  adc = !git lg -5 && git add -A :/ && git status && git commit
+  lcm = log -1 --pretty=%B
+  lg = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  dt = diff-tree --no-commit-id --name-status -r
+  mrg = merge
+  av = add -Av
+  st = status
+  subdate = submodule update --init
+  submst = "!f() { git -C ~/Work/tvorimobile/Packages/ti-core status &  git -C ~/Work/tvorimobile/Packages/ti-common status; }; f"
+  subclean = "!f() { git submodule foreach --recursive git reset --hard & git submodule foreach --recursive git clean -df; }; f"
+  devbr = !git checkout develop -f && git pull --rebase && git checkout -b
+  chbr = checkout -b
+  gr = "!python ~/.scripts/git_gr.py checkout"
+  mr = "!python ~/.scripts/git_gr.py merge"
+  pr = "!python ~/.scripts/git_pr.py"
+  md = "!~/scripts/git_mr_dev.sh"
+[difftool]
+  prompt = false
+  tool = vscode
+[difftool "vscode"]
+  cmd = code --wait --diff $LOCAL $REMOTE
+[merge]
+  tool = vscode
+[mergetool "vscode"]
+  cmd = code --wait $MERGED
+[mergetool]
+  keepBackup = false
+  prompt = false
+[color]
+  ui = true
+[push]
+  default = simple
+  autoSetupRemote = true
+[credential]
+  helper = wincred
+[help]
+  autocorrect = 2
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
