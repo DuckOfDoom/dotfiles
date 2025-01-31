@@ -6,6 +6,9 @@ map("n", "<leader>s", ":w<CR>", {})
 map("v", "kj", "<ESC>", {})
 map("i", "kj", "<ESC>", {})
 
+map("n", "<C-c>", [["+y]], { desc = "Copy Selection", silent = true })
+map("v", "<C-a>", [[ggvG]], { desc = "Select whole file", silent = true })
+
 map("n", "<C-z>", "u", { noremap = true, silent = true })
 map("n", "<C-S-z>", "<C-r>", { noremap = true, silent = true })
 map("i", "<C-z>", "u", { noremap = true, silent = true })

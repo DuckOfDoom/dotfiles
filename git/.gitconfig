@@ -21,6 +21,8 @@
   subclean = "!f() { git submodule foreach --recursive git reset --hard & git submodule foreach --recursive git clean -df; }; f"
   devbr = !git checkout develop -f && git pull --rebase && git checkout -b
   chbr = checkout -b
+  st = status
+  ch = checkout
   gr = "!python ~/.scripts/git_gr.py checkout"
   mr = "!python ~/.scripts/git_gr.py merge"
   pr = "!python ~/.scripts/git_pr.py"
@@ -47,9 +49,9 @@
 [help]
   autocorrect = 2
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-    required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
 [safe]
-	directory = *
+ directory = *

@@ -91,7 +91,7 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias work='cd /mnt/c/Users/Vladimir/Work'
+alias work='cd /mnt/c/Users/horax/Work'
 alias git="git.exe"
 
 # Add an "alert" alias for long running commands.  Use like so:
@@ -116,4 +116,13 @@ if ! shopt -oq posix; then
   elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
   fi
+fi
+
+# add nvim to path
+export PATH="$PATH:/usr/local/bin/nvim-linux64/bin"
+
+# Git branch in prompt
+if [ -f /usr/share/git/completion/git-prompt.sh ]; then
+    . /usr/share/git/completion/git-prompt.sh
+    PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 fi

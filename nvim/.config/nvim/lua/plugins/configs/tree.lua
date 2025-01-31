@@ -11,6 +11,12 @@ return {
         enable = true,
         update_root = false
     },
+    update_cwd          = true,
+    update_focused_file = {
+      enable      = true,
+      update_cwd  = true,
+      ignore_list = {}
+    },
     view = {
         adaptive_size = true,
         side = "left",

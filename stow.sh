@@ -1,4 +1,5 @@
 #!/bin/bash
+sudo apt-get update
 sudo apt-get install stow
 
 # install stuff for nvim
@@ -7,11 +8,18 @@ sudo apt-get install fd-find
 stow nvim
 
 # bash
-mv ~/.bashrc ~/.bashrc_backup
+if [ ! -f ~/.bashrc_backup ]; then
+    mv ~/.bashrc ~/.bashrc_backup
+    echo "Backed up .bashrc"
+fi
+
 stow bash
 
 # git
-mv ~/.gitconfig ~/.gitconfig_backup
+if [ ! -f ~/.gitconfig_backup ]; then
+    mv ~/.gitconfig ~/.gitconfig_backup
+    echo "Backed up .gitconfig"
+fi
 stow git
 
 # move some scripts
