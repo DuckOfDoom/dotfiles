@@ -5,7 +5,7 @@
   autocrlf = true
   preloadindex = true
   fscache = true
-  editor = vim
+  editor = nvim
   ignorecase = false
 [alias]
   bclean = "!f() { git remote prune origin && git for-each-ref --format '%(refname:short)' refs/heads | xargs git branch -D; }; f"
@@ -18,8 +18,10 @@
   st = status
   subdate = submodule update --init
   submst = "!f() { git -C ~/Work/tvorimobile/Packages/ti-core status &  git -C ~/Work/tvorimobile/Packages/ti-common status; }; f"
-  subclean = "!f() { git submodule foreach --recursive git reset --hard & git submodule foreach --recursive git clean -df; }; f"
+  subclean = "!f() { git submodule foreach --recursive 'git reset --hard' & git submodule foreach --recursive 'git clean -df' & git subdate;}; f"
   devbr = !git checkout develop -f && git pull --rebase && git checkout -b
+  chdev = !git checkout develop -f && git pull --rebase && git subdate
+  am = git commit --amend --no-edit
   chbr = checkout -b
   st = status
   ch = checkout

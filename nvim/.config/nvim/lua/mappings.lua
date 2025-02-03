@@ -6,7 +6,8 @@ map("n", "<leader>s", ":w<CR>", {})
 map("v", "kj", "<ESC>", {})
 map("i", "kj", "<ESC>", {})
 
-map("n", "<C-c>", [["+y]], { desc = "Copy Selection", silent = true })
+map({"n", "v"}, "<C-c>", [["+y]], { desc = "Copy Selection", silent = true })
+map({"n", "v"}, "<leader><CR>", ":noh<CR>", { desc = "Remove highlight", silent = true })
 map("v", "<C-a>", [[ggvG]], { desc = "Select whole file", silent = true })
 
 map("n", "<C-z>", "u", { noremap = true, silent = true })
@@ -14,7 +15,7 @@ map("n", "<C-S-z>", "<C-r>", { noremap = true, silent = true })
 map("i", "<C-z>", "u", { noremap = true, silent = true })
 map("i", "<C-S-z>", "<C-r>", { noremap = true, silent = true })
 
-map("v", "<C-j>", ":join<CR>", { desc= "Join lines" })
+map("n", "<C-j>", ":join<CR>", { desc= "Join lines" })
 
 -- Move around vim-style
 map("n", "<A-j>", ":wincmd h<CR>", { desc = "switch window left" })
