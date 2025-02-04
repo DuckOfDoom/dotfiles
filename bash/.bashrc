@@ -96,6 +96,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias work='cd /mnt/c/Users/Vladimir/Work'
+alias workhome='cd /mnt/c/Users/horax/Work'
 alias git="git.exe"
 
 # Add an "alert" alias for long running commands.  Use like so:
