@@ -1,7 +1,8 @@
 #!/bin/bash
+
 sudo apt-get update
 sudo apt-get install stow
-
+
 # install neovim from snap
 sudo snap install nvim --classic
 
