@@ -16,6 +16,7 @@ map("i", "<C-z>", "u", { noremap = true, silent = true })
 map("i", "<C-S-z>", "<C-r>", { noremap = true, silent = true })
 
 map("n", "<C-j>", ":join<CR>", { desc= "Join lines" })
+map("t", "<Esc>", [[<C-\><C-n>]])
 
 -- Move around vim-style
 map("n", "<A-j>", ":wincmd h<CR>", { desc = "switch window left" })
