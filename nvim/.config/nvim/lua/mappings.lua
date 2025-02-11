@@ -16,7 +16,12 @@ map("i", "<C-z>", "u", { noremap = true, silent = true })
 map("i", "<C-S-z>", "<C-r>", { noremap = true, silent = true })
 
 map("n", "<C-j>", ":join<CR>", { desc= "Join lines" })
-map("t", "<Esc>", [[<C-\><C-n>]])
+map("n", "<space>", "zz", { desc= "Focus screen" })
+-- nnoremap("''", "''zz")
+
+-- Terminal
+map("n", "<leader>t", ":vsplit <bar> :terminal<CR>i", { desc = "Open terminal in split" })
+map("t", "<Esc>", [[<C-\><C-n>]], { desc = "Unfocus terminal" })
 
 -- Move around vim-style
 map("n", "<A-j>", ":wincmd h<CR>", { desc = "switch window left" })
@@ -28,9 +33,10 @@ map("n", "<leader>wc", ":close<CR>", { desc = "close current window" })
 map("n", "<leader>wn", ":vnew<CR>", { desc = "open new window in vsplit" })
 
 -- Buffers
-map("n", "<S-k>", ":bnext<CR>", { })
-map("n", "<S-j>", ":bprevious<CR>", { })
+map("n", "<S-k>", ":bnext<CR>", { desc = "next buffer" })
+map("n", "<S-j>", ":bprevious<CR>", { desc = "prev buffer" })
 map("n", "<leader>ba", function() require("custom/buffers").BufOnly() end, { desc = "Delete all buffers except for active one" })
+map("n", "<leader>bc", ":bd!<CR>", { desc = "Close current buffer" })
 
 -- Reload configuration without restart nvim
 map("n", "<leader>r", ":source ~/.config/nvim/init.lua<cr>", { desc = "Reload configuration without restart nvim" })

@@ -16,7 +16,7 @@ if [ ! -f ~/.bashrc_backup ]; then
     echo "Backed up .bashrc"
 fi
 
-ln -f bash/.bashrc ~/.bashrc
+ln -f bashrc ~/.bashrc
 
 # git
 if [ ! -f ~/.gitconfig_backup ]; then
@@ -24,7 +24,7 @@ if [ ! -f ~/.gitconfig_backup ]; then
     echo "Backed up .gitconfig"
 fi
 
-ln -f git/.gitconfig ~/.gitconfig
+ln -f gitconfig ~/.gitconfig
 
 # move some scripts
 for script in scripts/*.*; do
