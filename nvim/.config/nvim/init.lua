@@ -38,8 +38,7 @@ for _, source in ipairs({
     "plugins",
     "options",
     "mappings",
-    "autocmds",
-    "custom"
+    "autocmds"
 }) do
     local ok, fault = pcall(require, source)
     if not ok then

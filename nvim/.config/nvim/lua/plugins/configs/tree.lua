@@ -7,21 +7,19 @@ return {
     hijack_cursor = true,
     hijack_unnamed_buffer_when_opening = false,
     sync_root_with_cwd = true,
-    update_focused_file = {
-        enable = true,
-        update_root = false
-    },
-    update_cwd          = true,
+    respect_buf_cwd = true,
+    update_cwd = true,
     update_focused_file = {
       enable      = true,
       update_cwd  = true,
+      update_root = true,
       ignore_list = {}
     },
     view = {
-        adaptive_size = false,
+        adaptive_size = true,
         side = "left",
         width = 100,
-        preserve_window_proportions = true
+        preserve_window_proportions = false
     },
     git = {
         enable = false,

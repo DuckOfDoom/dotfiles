@@ -55,7 +55,7 @@ map("n", "<leader>em", ":vsplit ~/.config/nvim/lua/mappings.lua<CR>", { noremap 
 -- NvimTree
 map("n", "<leader>nc", ":NvimTreeToggle<CR>", { desc = "Toggle NvimTree sidebar" })    -- open/close
 map("n", "<leader>nr", ":NvimTreeRefresh<CR>", { desc = "Refresh NvimTree" })         -- refresh
-map("n", "<leader>nt", ":NvimTreeFindFile<CR>", { desc = "Search file in NvimTree" }) -- search file
+map("n", "<leader>nt", ":lua _G.nvim_tree_find_file()<CR>", { desc = "Search file in NvimTree" }) -- search file
 
 -- LSP
 map("n", "<leader>gm", function()
