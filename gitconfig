@@ -17,10 +17,10 @@
   av = add -Av
   st = status
   subdate = submodule update --init
-  subst = "!f() { git -C ~/Work/tvorimobile/Packages/ti-core status & git -C ~/Work/tvorimobile/Packages/ti-common status; }; f"
-  subclean = "!f() { git submodule foreach --recursive 'git reset --hard' & git submodule foreach --recursive 'git clean -df' & git subdate;}; f"
+  submst = "!f() { git -C ~/Work/tvorimobile/Packages/ti-core status &  git -C ~/Work/tvorimobile/Packages/ti-common status; }; f"
+  subclean = "!f() { git submodule foreach --recursive 'git reset --hard && git clean -df & git subdate; }; f"
   devbr = !git checkout develop -f && git pull --rebase && git checkout -b
-  chdev = !git checkout develop -f && git pull --rebase && git subdate
+  chdev = !git reset --hard && git clean-df && git checkout develop -f && git pull --rebase && git subdate
   chclean = "!f() { git reset --hard && git clean -df && git checkout \"$1\" && git pull --rebase && git subclean; }; f"
   am = git commit --amend --no-edit
   chbr = checkout -b
