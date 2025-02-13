@@ -100,6 +100,8 @@ alias workhome='cd /mnt/c/Users/horax/Work'
 alias todo='nvim ~/todo'
 alias git="git.exe"
 
+alias clip="clip_function"
+
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -126,3 +128,11 @@ fi
 
 # Created by `pipx` on 2025-02-06 17:01:46
 export PATH="$PATH:/home/duckofdoom/.local/bin"
+
+# function to copy command output to clipbooard
+clip() {
+    out=$("$@" | tr -d '\n')
+    echo $out
+    echo $out | clip.exe
+}
+

@@ -31,3 +31,6 @@ for script in scripts/*.*; do
     echo $script
     #ln -sf scriptgitconfig ~/.gitconfig
 done
+
+# for creating symlink on windows in cmd
+# mklink .gitconfig "\\wsl.localhost\Ubuntu\home\duckofdoom\.dotfiles\gitconfig"
