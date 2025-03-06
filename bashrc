@@ -132,7 +132,7 @@ export PATH="$PATH:/home/duckofdoom/.local/bin"
 # function to copy command output to clipbooard
 clip() {
     out=$("$@" | tr -d '\n')
+    clip.exe $out
     echo $out
-    echo $out | clip.exe
 }
 

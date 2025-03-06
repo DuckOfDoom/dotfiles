@@ -17,6 +17,10 @@ map("i", "<C-S-z>", "<C-r>", { noremap = true, silent = true })
 
 map("n", "<C-j>", ":join<CR>", { desc= "Join lines" })
 map("n", "<space>", "zz", { desc= "Focus screen" })
+
+map("n", "<leader>fj", function() require("custom/json").Format("n") end, { desc= "Format json" })
+map("v", "<leader>fj", function() require("custom/json").Format("v") end, { desc= "Format json" })
+
 -- nnoremap("''", "''zz")
 
 -- Terminal

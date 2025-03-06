@@ -8,6 +8,7 @@ M.plugins = {
 -- feel free to create your own separate files and require them in here
 M.configs = function()
   require("custom/buffers")
+  require("custom/json")
   require("custom/tree")
 end
 

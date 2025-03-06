@@ -22,6 +22,7 @@
   devbr = !git checkout develop -f && git pull --rebase && git checkout -b
   chdev = !git reset --hard && git clean -df && git checkout develop -f && git pull --rebase && git subdate
   chclean = "!f() { git reset --hard && git clean -df && git checkout \"$1\" && git pull --rebase && git subclean; }; f"
+  ft = "!f() { git fetch origin \"$1\":\"$1\"; }; f"
   am = git commit --amend --no-edit
   chbr = checkout -b
   st = status
