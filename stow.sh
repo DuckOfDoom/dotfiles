@@ -4,13 +4,16 @@ sudo apt-get update
 # install stuff for nvim
 sudo apt-get install ripgrep
 sudo apt-get install fd-find
-stow nvim
+
+# link nvim config
+mkdir ~/.config
+ln -s nvim ~/.config/nvim
 
 # install neovim from snap
 sudo snap install nvim --classic
 
 # bash
-sed -i 's/\r//' bash/.bashrc # fix line endings just in case
+sed -i 's/\r//' bashrc # fix line endings just in case
 if [ ! -f ~/.bashrc_backup ]; then
     mv ~/.bashrc ~/.bashrc_backup
     echo "Backed up .bashrc"
@@ -26,10 +29,11 @@ fi
 
 ln -f gitconfig ~/.gitconfig
 
+
 # move some scripts
 for script in scripts/*.*; do
     echo $script
-    #ln -sf scriptgitconfig ~/.gitconfig
+    ln -s $script ~/$script
 done
 
 # for creating symlink on windows in cmd
