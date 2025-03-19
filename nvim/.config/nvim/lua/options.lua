@@ -14,10 +14,12 @@ cmd([[
 
 opt.backspace = { "eol", "start", "indent" } -- allow backspacing over everything in insert mode
 opt.clipboard = "unnamedplus"                -- allow neovim to access the system clipboard
-vim.opt.fileencoding = "utf-8"               -- the encoding written to a file
+opt.fileencoding = "utf-8"               -- the encoding written to a file
 opt.encoding = "utf-8"                       -- the encoding
 opt.matchpairs = { "(:)", "{:}", "[:]", "<:>" }
 opt.syntax = "enable"
+-- opt.whichwrap = opt.whichwrap + { "h", "l", "<", ">" }
+
 
 -- indention
 opt.autoindent = true    -- auto indentation
@@ -34,12 +36,18 @@ opt.ignorecase = true -- ignore case in search patterns
 opt.smartcase = true  -- smart case
 opt.wildignore = opt.wildignore + { "*/node_modules/*", "*/.git/*", "*/vendor/*" }
 opt.wildmenu = true   -- make tab completion for files/buffers act like bash
+opt.incsearch = true  -- smart case
+opt.magic = true --  Enables enhanced regex features in searches and patterns.
+opt.showmatch = true -- Highlights matching brackets when the cursor is over one.
 
 -- ui
 opt.cursorline = true -- highlight the current line
 opt.laststatus = 2    -- only the last window will always have a status line
 opt.lazyredraw = true -- don"t update the display while executing macros
 opt.list = true
+opt.so = 7 -- Keeps at least 7 lines visible above and below the cursor when moving vertically with j and k.
+opt.ruler = true
+
 -- You can also add "space" or "eol", but I feel it"s quite annoying
 opt.listchars = {
     tab = "┊ ",
@@ -49,8 +57,16 @@ opt.listchars = {
     nbsp = "×"
 }
 
+-- Buffer options
+opt.hidden = true
+opt.switchbuf = split
+
+-- Tabs
+-- opt.showtabline = 0 -- Disables the tab bar at the top of the window.
+-- opt.tabpagemax = 1 --  Limits the maximum number of tab pages to 1
+
 -- Hide cmd line
-opt.cmdheight = 0      -- more space in the neovim command line for displaying messages
+opt.cmdheight = 2      -- more space in the neovim command line for displaying messages
 
 opt.mouse = "a"        -- allow the mouse to be used in neovim
 opt.number = true      -- set numbered lines
@@ -67,7 +83,7 @@ opt.swapfile = false    -- creates a swapfile
 opt.writebackup = false -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
 
 -- autocomplete
-opt.completeopt = { "menu", "menuone", "noselect" } -- mostly just for cmp
+opt.completeopt = { "longest", "menu", "menuone", "noselect" } -- mostly just for cmp
 opt.shortmess = opt.shortmess + {
     c = true
 } -- hide all the completion messages, e.g. "-- XXX completion (YYY)", "match 1 of 2", "The only match", "Pattern not found"

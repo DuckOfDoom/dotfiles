@@ -52,3 +52,9 @@ autocmd("Filetype", {
         vim.opt_local.spell = true
     end
 })
+
+autocmd("BufDelete", {
+  callback = function()
+    vim.cmd("bnext")  -- Open the next buffer
+  end
+})
